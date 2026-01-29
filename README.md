@@ -10,6 +10,7 @@ A comprehensive Jupyter notebook that teaches machine learning concepts with han
 - **Quantitative Trading Strategies** - Trend-following, pairs trading, multi-factor models
 - **Deep Learning** - LSTM and Transformer architectures for time series prediction
 - **Risk Management** - Kelly Criterion, portfolio optimization, backtesting
+- **Live Trading Dashboard** - Real-time crypto predictions with WebSocket streaming
 
 ## 📚 Table of Contents
 
@@ -28,6 +29,7 @@ A comprehensive Jupyter notebook that teaches machine learning concepts with han
 | 10B | Institutional Strategies | Pairs trading, multi-factor models, portfolio optimization |
 | 10C | Neural Networks | LSTM and Transformer architectures |
 | 11 | Next Steps | Resources for continued learning |
+| 12 | Live Dashboard | Real-time crypto prediction with all models |
 
 ## 🛠️ Technologies Used
 
@@ -38,13 +40,14 @@ A comprehensive Jupyter notebook that teaches machine learning concepts with han
 - **NumPy** - Numerical computing
 - **yfinance** - Stock data download
 - **matplotlib/seaborn** - Visualization
+- **websocket-client** - Real-time data streaming from Coinbase
 
 ## 🚀 Quick Start
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ml-finance.git
-cd ml-finance
+git clone https://github.com/ryanhyunminbae/machine-learning-notebook.git
+cd machine-learning-notebook
 ```
 
 ### 2. Create virtual environment
@@ -75,12 +78,17 @@ yfinance>=0.2.30
 jupyter>=1.0.0
 ipykernel>=6.25.0
 torch>=2.0.0
+scipy>=1.10.0
+statsmodels>=0.14.0
+websocket-client>=1.6.0
+ipywidgets>=8.0.0
+ipympl>=0.9.0
 ```
 
 ## 🏗️ Project Structure
 
 ```
-ml-finance/
+machine-learning-notebook/
 ├── ml_finance_fundamentals.ipynb  # Main notebook (7000+ lines)
 ├── requirements.txt               # Python dependencies
 ├── README.md                      # This file
@@ -91,8 +99,8 @@ ml-finance/
 
 ### Traditional ML
 - **Random Forest Classifier** - Predict market direction
+- **Gradient Boosting** - Ensemble learning
 - **Logistic Regression** - Binary classification baseline
-- **K-Means Clustering** - Group similar stocks
 
 ### Quantitative Strategies
 - **Trend Following** - SMA crossover with volatility management
@@ -109,6 +117,24 @@ ml-finance/
 - **Value at Risk (VaR)** - Downside risk measurement
 - **Walk-Forward Validation** - Realistic backtesting
 
+## 🔴 Live Trading Dashboard
+
+The notebook includes a real-time trading dashboard using Coinbase WebSocket:
+
+```python
+# In Part 12
+rt = RealTimeDashboard('BTC-USD')
+rt.run(duration_seconds=300)
+```
+
+**Features:**
+- Tick-by-tick price updates (no delay)
+- All 6 models predicting simultaneously
+- Technical indicator visualization (RSI, MACD, SMA)
+- Model reasoning - see why models are bullish/bearish
+- Performance comparison vs Buy & Hold
+- Supports BTC-USD, ETH-USD, SOL-USD, and more
+
 ## ⚠️ Disclaimer
 
 **This project is for educational purposes only.** 
@@ -123,7 +149,7 @@ ml-finance/
 
 1. **Beginner**: Start with Parts 1-6 to understand ML fundamentals
 2. **Intermediate**: Parts 7-9 for practical trading applications
-3. **Advanced**: Parts 10+ for institutional-grade strategies and deep learning
+3. **Advanced**: Parts 10-12 for institutional-grade strategies, deep learning, and live trading
 
 ## 📈 Sample Results
 
@@ -133,6 +159,7 @@ The notebook generates various visualizations including:
 - Training curves for neural networks
 - Risk-return scatter plots
 - Drawdown analysis
+- Real-time prediction dashboards
 
 ## 🤝 Contributing
 
@@ -151,6 +178,7 @@ MIT License - feel free to use this for learning and personal projects.
 - [yfinance](https://github.com/ranaroussi/yfinance) for free stock data
 - [PyTorch](https://pytorch.org/) for deep learning framework
 - [scikit-learn](https://scikit-learn.org/) for ML algorithms
+- [Coinbase](https://www.coinbase.com/) for real-time WebSocket API
 
 ---
 
